@@ -1,0 +1,22 @@
+{
+  "name": "potion-atelier",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node scripts/check.cjs",
+    "test:unit": "node --test tests/*.test.cjs",
+    "test:e2e": "playwright test",
+    "test": "npm run test:unit && npm run test:e2e",
+    "start": "node scripts/server.cjs",
+    "build": "node scripts/build.cjs",
+    "export": "node scripts/export.cjs",
+    "test:manual": "node tests/manual/browser.cjs source && node tests/manual/browser.cjs dist && node tests/manual/browser.cjs offline && node tests/manual/edge.cjs",
+    "verify": "npm run check && npm run build && npm run export && npm test && npm run test:manual && npm audit --fetch-retries=0 --fetch-timeout=15000",
+    "verify:offline": "npm run check && npm run build && npm run export && npm test && npm run test:manual && npm audit --offline",
+    "package": "python3 scripts/package.py"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "axe-core": "4.14.0"
+  }
+}
