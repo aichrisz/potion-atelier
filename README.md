@@ -2,7 +2,10 @@
 
 **Kedai di ujung hujan.** Game meracik ramuan yang tenang: meja kayu, lentera hangat, buku resep dan enam racikan khayalan. Dibangun dengan Astra (`gpt-6-astra`), dengan pemeriksaan mekanik, permainan browser dan penerimaan terpisah oleh parent.
 
-Proyek ini lokal/offline. Belum ada repo publik atau deployment yang dibuat untuk Potion Atelier.
+**Main langsung:** https://aichrisz.github.io/potion-atelier/
+**Source:** https://github.com/aichrisz/potion-atelier
+
+Dipublikasikan atas permintaan Abel. GitHub Pages hanya menyajikan tujuh berkas runtime; HTML mandiri tetap bisa dimainkan offline. Source rilis asli berada pada tag `v1.0.0`; dokumentasi publikasi terbaru berada di `main`. Lihat [catatan deployment](docs/deployment.md).
 
 ## Mainkan
 
@@ -86,7 +89,7 @@ npm run verify
 npm run package
 ```
 
-`verify` menjalankan pemeriksaan syntax/allowlist, build, ekspor, unit, Playwright, play-through tambahan untuk **source + dist + HTML offline**, matriks edge dan audit dependensi online dengan timeout terbatas. Pada penerimaan ini, seluruh pemeriksaan permainan lulus, tetapi endpoint audit online timeout. Instalasi bersih melaporkan0kerentanan; audit cache yang benar-benar dijalankan juga melaporkan0, **bukan bukti pembaruan advisory online**. Untuk mengulang dengan cache yang tersedia, gunakan `npm run verify:offline`; opsi itu sengaja diberi nama berbeda agar tidak menyamarkan freshness. Hasil parent: **17unit + 9Playwright**, tanpa skipped/flaky; **12edge scenarios** dan ketiga varian runtime lulus. `test:manual` adalah nama harness otomatis tambahan, **bukan** bukti acceptance manual manusia. Log parent berada di `artifacts/acceptance/` dan `artifacts/parent/`; ringkasan Playwright di `artifacts/playwright-results.json`.
+`verify` menjalankan pemeriksaan syntax/allowlist, build, ekspor, unit, Playwright, play-through tambahan untuk **source + dist + HTML offline**, matriks edge dan audit dependensi online dengan timeout terbatas. Pada penerimaan lokal awal, pemeriksaan permainan lulus tetapi endpoint audit online timeout; hasil nol temuan saat itu berasal dari cache. **Pada preflight publikasi 2026-10-22, audit online berhasil (exit 0), dengan nol kerentanan yang dilaporkan.** Bukti baru ini tidak mengubah riwayat keterbatasan audit lokal sebelumnya. Untuk mengulang dengan cache yang tersedia, gunakan `npm run verify:offline`; opsi itu sengaja diberi nama berbeda agar tidak menyamarkan freshness. Hasil parent: **17unit + 9Playwright**, tanpa skipped/flaky; **12edge scenarios** dan ketiga varian runtime lulus. `test:manual` adalah nama harness otomatis tambahan, **bukan** bukti acceptance manual manusia. Log parent berada di `artifacts/acceptance/` dan `artifacts/parent/`; ringkasan Playwright di `artifacts/playwright-results.json`.
 
 Chromium host ini memakai `/root/.hermes/tools/chromium-1208/chrome-linux/chrome`. Untuk mesin lain, set `CHROMIUM_PATH` ke browser Chromium yang tersedia. Jika memakai unduhan Playwright:
 
