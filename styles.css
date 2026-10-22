@@ -1,0 +1,732 @@
+:root {
+  color-scheme: light;
+  --ink: #382d23;
+  --paper: #f2e5c9;
+  --gold: #e5bd70;
+  --green: #4e6447;
+  --muted: #6b5b46;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #30261f;
+  color: var(--ink);
+  font:
+    16px/1.5 Georgia,
+    "Times New Roman",
+    serif;
+}
+button,
+input,
+summary {
+  font: inherit;
+}
+button,
+summary {
+  cursor: pointer;
+}
+button {
+  min-height: 44px;
+  border: 1px solid #89704f;
+  border-radius: 7px;
+  padding: 9px 17px;
+  background: #f2e5c9;
+  color: #382d23;
+  font-weight: bold;
+}
+button:hover:not(:disabled) {
+  background: #fff1cf;
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #ad5b2c;
+  outline-offset: 3px;
+}
+.gold {
+  background: var(--gold);
+  border-color: #a77b3e;
+  box-shadow: 0 3px 0 #7d5a36;
+}
+.gold:hover:not(:disabled) {
+  background: #f3d398;
+}
+header {
+  max-width: 1260px;
+  margin: auto;
+  padding: 19px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #eddfbd;
+}
+.brand {
+  font-size: 24px;
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  line-height: 1.2;
+}
+.brand img {
+  grid-row: span 2;
+}
+.brand span {
+  font: 10px/2.2 system-ui;
+  letter-spacing: 2.4px;
+}
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.effects {
+  font: 13px system-ui;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.effects input {
+  width: 18px;
+  height: 18px;
+  accent-color: #bba363;
+}
+main {
+  max-width: 1204px;
+  margin: auto;
+  background: var(--paper);
+  box-shadow: 0 0 50px #100c0970;
+}
+.shop {
+  height: 245px;
+  position: relative;
+  overflow: hidden;
+  background: #503c2c;
+}
+.shop-art {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.shop-sign {
+  position: absolute;
+  left: 6%;
+  top: 25px;
+  color: #f6e8c8;
+  text-shadow: 0 2px 8px #271b14;
+}
+.shop-sign > span,
+.eyebrow {
+  font: 10px/1.5 system-ui;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.shop h1 {
+  font-size: 40px;
+  line-height: 1.08;
+  margin: 9px 0;
+}
+.shop p {
+  font-size: 14px;
+  margin: 0;
+  color: #e6d1ac;
+}
+.open-sign {
+  position: absolute;
+  right: 5%;
+  bottom: 15px;
+  color: #f3deb4;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 23px 5%;
+  border-bottom: 1px solid #c9b58e;
+}
+.welcome h2 {
+  font-size: 23px;
+  margin: 0;
+}
+.welcome p {
+  font-size: 14px;
+  margin: 5px 0;
+  max-width: 730px;
+}
+.welcome button {
+  flex-shrink: 0;
+}
+.save-note {
+  color: #63513d;
+}
+.shift-bar {
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  padding: 12px 5%;
+  background: #e2d1ad;
+  border-block: 1px solid #c9b58e;
+  font: 13px system-ui;
+}
+.shift-bar strong {
+  font-size: 20px;
+  margin-left: 5px;
+}
+#phase {
+  align-self: center;
+  font-weight: bold;
+  color: #42553b;
+}
+.bench {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  scroll-margin-top: 8px;
+  padding: 28px 5%;
+  gap: 38px;
+  background: radial-gradient(ellipse at 90% 10%, #fff7e340, transparent 70%);
+}
+.order {
+  border-right: 1px solid #c8b38d;
+  padding-right: 28px;
+}
+.customer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.customer svg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #d6c39b;
+  flex-shrink: 0;
+}
+.customer p {
+  font-size: 13px;
+  margin: 3px 0;
+}
+.order h2 {
+  font-size: 29px;
+  margin: 15px 0 5px;
+}
+.order-quote {
+  font-style: italic;
+  font-size: 14px;
+  color: #66523d;
+}
+.order ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+.order li {
+  padding: 3px 0;
+}
+.order li:before {
+  content: "✧";
+  margin-right: 10px;
+  color: #58704e;
+}
+.recipe-targets {
+  display: flex;
+  gap: 20px;
+  border-block: 1px solid #c9b58e;
+  padding: 12px 0;
+  font: 9px system-ui;
+  letter-spacing: 1px;
+}
+.recipe-targets strong {
+  display: block;
+  font: 23px Georgia;
+  letter-spacing: 0;
+  margin-top: 4px;
+}
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+.workstation {
+  min-width: 0;
+  position: relative;
+}
+.stage-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stage-heading h2 {
+  font-size: 21px;
+  margin: 0;
+}
+.instrument {
+  min-height: 260px;
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+.cauldron {
+  width: 100%;
+  filter: drop-shadow(0 12px 10px #704e2920);
+}
+.ingredients {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.ingredients button {
+  font-size: 13px;
+  padding: 8px 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 58px;
+  background: #ead9b7;
+}
+.ingredients button span {
+  font-size: 26px;
+  color: #56684a;
+}
+.ingredients button[aria-pressed="true"] {
+  background: #d0d7b4;
+  border: 2px solid #526640;
+  padding: 7px 6px;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+}
+.actions #primary {
+  flex: 1;
+}
+.reading {
+  margin: 10px 0;
+  font-size: 16px;
+}
+.reading strong {
+  font-size: 27px;
+}
+.meter {
+  position: relative;
+  height: 27px;
+  border: 1px solid #8d7759;
+  border-radius: 6px;
+  background: #dfcba8;
+  margin: 12px 0 20px;
+  overflow: visible;
+}
+.band {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    #8d9f6d,
+    #8d9f6d 4px,
+    #a2b582 4px,
+    #a2b582 8px
+  );
+  border-inline: 2px solid #4e6447;
+}
+.needle {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 4px;
+  background: #3e2d21;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+#fire {
+  width: 100%;
+  min-height: 44px;
+  accent-color: #8e4d26;
+}
+#heat-stage,
+#stir-stage,
+#bottle-stage {
+  min-width: 0;
+}
+label[for="fire"] {
+  font-size: 14px;
+}
+.hint {
+  font-size: 13px;
+  color: #66523d;
+}
+.actions + p {
+  font-size: 13px;
+  min-height: 22px;
+  margin-bottom: 0;
+}
+#breakdown,
+#reward {
+  font-size: 14px;
+}
+.ledger {
+  margin: 0 5%;
+  border-block: 1px solid #bda780;
+}
+.ledger summary {
+  padding: 17px 0;
+  min-height: 48px;
+  font-size: 19px;
+}
+.ledger summary span {
+  float: right;
+  font: 12px/2 system-ui;
+}
+#recipe-book {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 0 0 20px;
+}
+#recipe-book article {
+  border-left: 2px solid #9a855e;
+  padding: 0 12px;
+}
+#recipe-book h3 {
+  font-size: 17px;
+  margin: 0;
+}
+#recipe-book p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+footer {
+  text-align: center;
+  padding: 20px 16px;
+  font-size: 12px;
+  color: #6b5b46;
+}
+dialog {
+  background: #f2e5c9;
+  color: #382d23;
+  border: 1px solid #a98b56;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 460px;
+  width: calc(100% - 28px);
+  max-height: calc(100dvh - 28px);
+  overflow: auto;
+  box-shadow: 0 20px 80px #0008;
+}
+dialog::backdrop {
+  background: #201a14ba;
+  backdrop-filter: blur(3px);
+}
+dialog h2 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+dialog button {
+  width: 100%;
+}
+[hidden] {
+  display: none !important;
+}
+.bubbles {
+  animation: rise 3s infinite;
+}
+.flame {
+  transform-origin: 50% 100%;
+  animation: flicker 0.8s infinite alternate;
+}
+body:not([data-phase="running"]) .bubbles,
+body:not([data-phase="running"]) .flame,
+body.no-effects .bubbles,
+body.no-effects .flame {
+  animation-play-state: paused;
+}
+@keyframes rise {
+  50% {
+    transform: translateY(-6px);
+    opacity: 0.4;
+  }
+}
+@keyframes flicker {
+  to {
+    transform: scaleY(0.86);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bubbles,
+  .flame {
+    animation: none;
+  }
+}
+@media (min-width: 900px) {
+  body[data-phase="running"] .shop,
+  body[data-phase="paused"] .shop,
+  body[data-phase="results"] .shop {
+    height: 145px;
+  }
+  body:not([data-phase="ready"]) .shop h1 {
+    font-size: 28px;
+  }
+  body:not([data-phase="ready"]) .shop p {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  header {
+    padding: 12px 18px;
+  }
+  .brand {
+    font-size: 20px;
+  }
+  .header-tools {
+    gap: 8px;
+  }
+  .effects {
+    font-size: 11px;
+  }
+  .shop {
+    height: 200px;
+  }
+  .shop h1 {
+    font-size: 32px;
+  }
+  .bench {
+    grid-template-columns: 235px 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  .order {
+    padding-right: 18px;
+  }
+  .instrument {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .cauldron {
+    height: 100px;
+  }
+  .stage-heading {
+    display: block;
+  }
+  .stage-heading h2 {
+    font-size: 20px;
+  }
+  .welcome {
+    padding: 20px;
+    gap: 15px;
+  }
+}
+@media (max-width: 580px) {
+  header {
+    padding: 12px;
+  }
+  .brand {
+    font-size: 19px;
+    grid-template-columns: 35px 1fr;
+  }
+  .brand img {
+    width: 28px;
+  }
+  .brand span {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .header-tools {
+    gap: 6px;
+  }
+  .effects {
+    font-size: 0;
+  }
+  .effects input {
+    margin: 0;
+  }
+  header button {
+    padding: 7px 12px;
+  }
+  .shop {
+    height: 210px;
+  }
+  .shop-sign {
+    left: 7%;
+    top: 29px;
+  }
+  .shop-art {
+    width: 850px;
+    max-width: none;
+    left: -230px;
+  }
+  .shop h1 {
+    font-size: 32px;
+  }
+  .open-sign {
+    display: none;
+  }
+  .welcome {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .welcome p {
+    font-size: 13px;
+  }
+  .welcome h2 {
+    font-size: 22px;
+  }
+  .shift-bar {
+    gap: 7px;
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+  .shift-bar strong {
+    font-size: 16px;
+    margin-left: 2px;
+  }
+  .bench {
+    display: block;
+    padding: 18px;
+  }
+  .order {
+    border-right: 0;
+    border-bottom: 1px solid #baa783;
+    padding: 0 0 12px;
+    margin-bottom: 13px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+  }
+  .customer {
+    grid-column: 1/-1;
+  }
+  .customer svg {
+    height: 40px;
+    width: 40px;
+  }
+  .customer p {
+    margin: 0;
+  }
+  .order h2 {
+    font-size: 25px;
+    grid-column: 1/-1;
+    margin: 6px 0;
+  }
+  .order-quote,
+  .order .muted {
+    display: none;
+  }
+  .order ul {
+    font-size: 12px;
+    margin: 3px 0;
+  }
+  .order li {
+    padding: 1px 0;
+  }
+  .recipe-targets {
+    border: 0;
+    padding: 4px 0;
+    gap: 10px;
+    flex-direction: column;
+    font-size: 8px;
+  }
+  .recipe-targets strong {
+    font-size: 18px;
+    display: inline;
+    margin-left: 4px;
+  }
+  .stage-heading {
+    display: flex;
+    gap: 10px;
+  }
+  .stage-heading .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .stage-heading h2 {
+    font-size: 18px;
+  }
+  .instrument {
+    min-height: 230px;
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+  .cauldron {
+    height: 93px;
+    margin: 0 auto;
+  }
+  .ingredients {
+    gap: 6px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ingredients button {
+    font-size: 11px;
+    flex-direction: column;
+    gap: 0;
+    min-height: 59px;
+    padding: 5px 3px;
+    line-height: 1.2;
+  }
+  .ingredients button[aria-pressed="true"] {
+    padding: 4px 2px;
+  }
+  .ingredients button span {
+    font-size: 20px;
+  }
+  .actions {
+    gap: 8px;
+  }
+  .actions button {
+    font-size: 13px;
+    padding: 10px 8px;
+  }
+  #feedback {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .reading {
+    margin: 4px 0;
+  }
+  .hint {
+    margin: 3px 0 10px;
+  }
+  #recipe-book {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ledger summary {
+    font-size: 17px;
+  }
+  .ledger summary span {
+    font-size: 10px;
+  }
+  footer {
+    font-size: 11px;
+  }
+  .meter {
+    margin-bottom: 12px;
+  }
+  body:not([data-phase="ready"]) .shop {
+    height: 110px;
+  }
+  body:not([data-phase="ready"]) .shop-sign {
+    top: 14px;
+  }
+  body:not([data-phase="ready"]) .shop-sign span,
+  body:not([data-phase="ready"]) .shop-sign p {
+    display: none;
+  }
+  body:not([data-phase="ready"]) .shop h1 {
+    font-size: 26px;
+  }
+  dialog {
+    padding: 22px;
+  }
+}

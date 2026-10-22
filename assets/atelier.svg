@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280">
+  <defs>
+    <linearGradient id="wall" x2="0" y2="1">
+      <stop stop-color="#342a23" />
+      <stop offset="1" stop-color="#6d4d32" />
+    </linearGradient>
+    <linearGradient id="glass" x2="0" y2="1">
+      <stop stop-color="#405854" />
+      <stop offset="1" stop-color="#8a9478" />
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#f7cd72" stop-opacity=".45" />
+      <stop offset="1" stop-color="#f7cd72" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="rain" width="37" height="49" patternUnits="userSpaceOnUse">
+      <path
+        d="M13 3l-6 21m27 8-4 12"
+        stroke="#bdc5ad"
+        opacity=".4"
+        stroke-width="1.5"
+      />
+    </pattern>
+    <g id="bottle">
+      <path
+        d="M-9-58h18v20q20 9 19 31L25 8h-50l-3-15q-1-22 19-31z"
+        fill="currentColor"
+        opacity=".85"
+        stroke="#e7ce9e"
+        stroke-width="2"
+      />
+      <path
+        d="M-13-25q-9 10-8 22"
+        stroke="#f9e5b2"
+        stroke-width="3"
+        fill="none"
+        opacity=".5"
+      />
+      <path d="M-11-63h22v9h-22z" fill="#ac8052" />
+      <path d="M-17-13h34v16h-34z" fill="#dfcba1" />
+      <path d="M-5-5h10" stroke="#806744" />
+    </g>
+  </defs>
+  <path fill="url(#wall)" d="M0 0h1200v280H0z" />
+  <g stroke="#987346" opacity=".2">
+    <path
+      d="M0 30h1200M0 90h1200M0 150h1200M0 210h1200M100 0v280M360 0v280M950 0v280"
+    />
+  </g>
+  <circle cx="470" cy="100" r="220" fill="url(#glow)" />
+  <path
+    d="M540 240V65Q540 3 660 3T780 65v175z"
+    fill="#2b241e"
+    stroke="#a57f4d"
+    stroke-width="10"
+  />
+  <path d="M552 226V67Q552 16 660 16T768 67v159z" fill="url(#glass)" />
+  <path d="M553 226V67Q552 16 660 16T768 67v159z" fill="url(#rain)" />
+  <path
+    d="M660 16v210M552 100h216M552 174h216"
+    stroke="#59432e"
+    stroke-width="9"
+  />
+  <path d="M530 243h260" stroke="#b38b53" stroke-width="13" />
+  <path
+    d="M603 220q-50-47-35-84 38 9 35 84m1 0q-4-60 22-72 20 24-22 72m-3-1q-48-7-52-30 31-9 52 30"
+    fill="#607750"
+    stroke="#91a26a"
+    stroke-width="2"
+  />
+  <path d="M580 214h45l-7 35h-31z" fill="#ba8158" />
+  <g stroke="#2e241c" stroke-width="10">
+    <path d="M827 105h333M827 218h333" />
+  </g>
+  <g stroke="#b08551" stroke-width="5"><path d="M827 99h333M827 212h333" /></g>
+  <g transform="translate(870 86)" color="#9ca581"><use href="#bottle" /></g>
+  <g transform="translate(945 86) scale(.85 1.2)" color="#b68caa">
+    <use href="#bottle" />
+  </g>
+  <g transform="translate(1023 86) scale(.75 .85)" color="#c7a258">
+    <use href="#bottle" />
+  </g>
+  <g transform="translate(1102 86) scale(.95 1.15)" color="#73978b">
+    <use href="#bottle" />
+  </g>
+  <g transform="translate(887 199) scale(1.15 1.1)" color="#cb936d">
+    <use href="#bottle" />
+  </g>
+  <g transform="translate(983 199)" color="#88a06f"><use href="#bottle" /></g>
+  <g transform="translate(1082 199) scale(1.2 .85)" color="#c3a9bd">
+    <use href="#bottle" />
+  </g>
+  <path
+    d="M457 0v38m-21 0h42l8 57h-58z"
+    stroke="#bd9153"
+    stroke-width="5"
+    fill="#4b3826"
+  />
+  <path d="M439 47h36l5 40h-45z" fill="#eec171" />
+  <path d="M450 54h10v28h-10z" fill="#fff1b0" />
+  <path
+    d="M1145 0q-35 58-8 102m-4-69q-36-3-31-25 28 1 31 25m-2 21q31-22 39-2-11 23-39 2m3 19q-39 6-33-16 26-9 33 16"
+    fill="#63724b"
+    stroke="#8b9561"
+    stroke-width="3"
+  />
+  <path d="M0 270h1200" stroke="#2a201a" stroke-width="20" />
+  <path
+    d="M36 0q-17 55 4 104M47 0q35 21 24 41-27-1-24-41M34 55Q1 37 6 21q31 2 28 34M38 77q36-24 40-6-10 23-40 6"
+    fill="#64764f"
+    stroke="#879063"
+    stroke-width="2"
+  />
+</svg>

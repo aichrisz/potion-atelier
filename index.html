@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#30261f" />
+    <title>Potion Atelier — Kedai di ujung hujan</title>
+    <link rel="icon" href="assets/mark.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-phase="ready">
+    <header>
+      <a class="brand" href="#bench"
+        ><img src="assets/mark.svg" width="38" height="44" alt="" /> Potion
+        Atelier<span>KEDAI DI UJUNG HUJAN</span></a
+      >
+      <div class="header-tools">
+        <label class="effects"
+          ><input id="effects" type="checkbox" checked /> Dekorasi</label
+        ><button id="pause" disabled>Jeda</button>
+      </div>
+    </header>
+    <main>
+      <section class="shop" aria-label="Kedai ramuan di malam hujan">
+        <img
+          class="shop-art"
+          src="assets/atelier.svg"
+          alt="Jendela berhujan, rak botol ramuan dan tanaman di kedai kayu yang hangat"
+        />
+        <div class="shop-sign">
+          <span>SEJAK BULAN PURNAMA</span>
+          <h1>Seduh sedikit<br />keajaiban.</h1>
+          <p>Untuk malam yang panjang,<br />dan hati yang ingin pulang.</p>
+        </div>
+        <div class="open-sign">✦ racikan tangan · bahan khayalan ✦</div>
+      </section>
+      <section id="welcome" class="welcome">
+        <div>
+          <h2>Selamat datang, peracik.</h2>
+          <p>
+            Layani pelanggan selama 180 detik aktif. Pilih 3 bahan, atur api,
+            lalu botolkan saat jarum masuk pita sasaran.
+          </p>
+          <p class="save-note" id="storage-note">
+            Kemajuan disimpan setelah giliran selesai. Racikan aktif tidak
+            dipulihkan.
+          </p>
+        </div>
+        <button id="start" class="gold" disabled>Buka kedai</button
+        ><noscript
+          ><p>
+            Permainan ini memerlukan JavaScript untuk simulasi api, pengadukan,
+            dan penyimpanan. Aktifkan JavaScript lalu muat ulang; tombol mulai
+            sengaja dinonaktifkan.
+          </p></noscript
+        >
+      </section>
+      <div class="shift-bar">
+        <span id="phase">Siap meracik</span
+        ><span>Waktu <strong id="time">180</strong> dtk</span
+        ><span>Koin <strong id="coins">0</strong></span
+        ><span>Reputasi <strong id="reputation">50</strong></span>
+      </div>
+      <section id="bench" class="bench" aria-label="Meja racik">
+        <aside class="order">
+          <div class="customer">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <path fill="#829078" d="M8 100Q10 64 50 63T92 100" />
+              <ellipse fill="#d9aa7b" cx="50" cy="44" rx="25" ry="28" />
+              <path
+                fill="#493527"
+                d="M23 44Q13 5 51 8Q85 8 78 49L64 26Q42 40 23 44"
+              />
+              <path
+                d="M40 47h2m17 0h2m-18 13q8 5 14-1"
+                stroke="#493527"
+                stroke-width="3"
+                fill="none"
+              />
+              <path fill="#c8ab6c" d="M35 76l15 10 17-11-4 25H39z" />
+            </svg>
+            <div>
+              <span class="eyebrow"
+                >PESANAN <span id="order-number">01</span></span
+              >
+              <p id="customer-name">Mira, penjaga kebun</p>
+            </div>
+          </div>
+          <h2 id="recipe-name">Embun Tidur</h2>
+          <p class="order-quote" id="order-quote">
+            “Boleh sesuatu untuk tidur yang tenang?”
+          </p>
+          <ul id="recipe-ingredients"></ul>
+          <div class="recipe-targets">
+            <span>SUHU SASARAN<strong id="heat-target">38–48°</strong></span
+            ><span>ADUKAN SASARAN<strong id="stir-target">35–55%</strong></span>
+          </div>
+          <p class="muted">
+            Bahan tepat = 60 poin.<br />Suhu + adukan = hingga 40 poin.
+          </p>
+        </aside>
+        <div class="workstation">
+          <div class="stage-heading">
+            <span class="eyebrow">MEJA RACIK</span>
+            <h2 id="stage-title">1 · Pilih tiga bahan</h2>
+          </div>
+          <div class="instrument" id="instrument">
+            <svg
+              class="cauldron"
+              viewBox="0 0 300 180"
+              role="img"
+              aria-label="Kuali ramuan di atas tungku"
+            >
+              <defs>
+                <linearGradient id="pot" x2="0" y2="1">
+                  <stop stop-color="#65564a" />
+                  <stop offset="1" stop-color="#292623" />
+                </linearGradient>
+              </defs>
+              <ellipse
+                cx="150"
+                cy="166"
+                rx="108"
+                ry="11"
+                fill="#39271e"
+                opacity=".3"
+              />
+              <path
+                class="flame"
+                fill="#e4a443"
+                d="M105 155q-14-25 11-37-2 22 17 19 8-36 25-39-5 22 18 36 8-14 17-18 15 28-5 42z"
+              />
+              <path
+                d="M87 62Q44 38 48 88q1 22 34 17M213 62q43-24 39 26-1 22-34 17"
+                fill="none"
+                stroke="#59483b"
+                stroke-width="10"
+              />
+              <path
+                d="M75 53h150l-9 61q-10 38-66 38t-66-38z"
+                fill="url(#pot)"
+                stroke="#241e1a"
+                stroke-width="4"
+              />
+              <ellipse cx="150" cy="53" rx="75" ry="22" fill="#241e1a" />
+              <ellipse
+                id="liquid"
+                cx="150"
+                cy="52"
+                rx="65"
+                ry="15"
+                fill="#bd9bd3"
+              />
+              <path
+                d="M174 48l34-44"
+                stroke="#c99d68"
+                stroke-width="9"
+                stroke-linecap="round"
+              />
+              <g class="bubbles" fill="none" stroke="#e9d1b3" stroke-width="2">
+                <circle cx="123" cy="32" r="5" />
+                <circle cx="152" cy="18" r="4" />
+                <circle cx="138" cy="3" r="3" />
+              </g>
+              <path
+                d="M98 89q3 27 25 35"
+                stroke="#8f7a61"
+                stroke-width="5"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+            <div id="ingredient-stage">
+              <div id="ingredients" class="ingredients"></div>
+            </div>
+            <div id="heat-stage" hidden>
+              <p class="reading">
+                Suhu <strong id="temperature">20.0°</strong>
+              </p>
+              <div class="meter">
+                <span id="heat-band" class="band"></span
+                ><span id="heat-needle" class="needle"></span>
+              </div>
+              <label for="fire"
+                >Besar api <output id="fire-value">60</output>%</label
+              ><input id="fire" type="range" min="0" max="100" value="60" />
+              <p class="hint">
+                Api mengubah suhu secara bertahap. Angkat di pita sasaran;
+                minimal 1 detik.
+              </p>
+            </div>
+            <div id="stir-stage" hidden>
+              <p class="reading">Adukan <strong id="stir-value">0%</strong></p>
+              <div class="meter">
+                <span id="stir-band" class="band"></span
+                ><span id="stir-needle" class="needle"></span>
+              </div>
+              <p class="hint">
+                Jarum bergerak bolak-balik. Botolkan di pita sasaran; minimal
+                0,25 detik.
+              </p>
+            </div>
+            <div id="bottle-stage" hidden>
+              <p class="reading">
+                Kualitas <strong id="quality">0 / 100</strong>
+              </p>
+              <p id="breakdown"></p>
+              <p id="reward"></p>
+            </div>
+          </div>
+          <div class="actions">
+            <button id="primary" class="gold" disabled>Panaskan racikan</button
+            ><button id="reset" disabled>Ulang racikan</button>
+          </div>
+          <p id="feedback" role="status">
+            Buka kedai untuk menyambut pelanggan pertama.
+          </p>
+        </div>
+      </section>
+      <details class="ledger">
+        <summary>
+          Buku resep <span id="unlock-count">3 / 6 terbuka</span>
+        </summary>
+        <div id="recipe-book"></div>
+      </details>
+      <footer>
+        Tanpa persediaan terbatas. Tanpa pesanan kedaluwarsa. Nikmati
+        ritmenya.<br />Tab untuk berpindah · Enter / Spasi untuk memilih · Panah
+        untuk api · P / Esc untuk jeda
+      </footer>
+    </main>
+    <dialog id="pause-dialog" aria-labelledby="pause-title">
+      <h2 id="pause-title">Hujan boleh menunggu.</h2>
+      <p>
+        Giliran dijeda. Waktu, api, dan adukan berhenti sampai kamu melanjutkan.
+      </p>
+      <button id="resume" class="gold">Lanjutkan</button>
+    </dialog>
+    <dialog id="results-dialog" aria-labelledby="results-title">
+      <span class="eyebrow">LENTERA MULAI REDUP</span>
+      <h2 id="results-title">Terima kasih untuk malam ini.</h2>
+      <p id="result-summary"></p>
+      <p id="result-unlock"></p>
+      <p id="result-storage" role="status"></p>
+      <p>Racikan yang belum diserahkan tidak dibayar.</p>
+      <button id="next" class="gold">Giliran berikutnya</button>
+    </dialog>
+    <script src="engine.js"></script>
+    <script src="view.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
